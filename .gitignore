@@ -1,0 +1,10 @@
+.ipynb_checkpoints
+.ipynb_checkpoints/*
+*/.ipynb_checkpoints/*
+*.json
+*.npy
+*.sol
+__pycache__
+*.pyc
+*.nbc
+*.sbatch
