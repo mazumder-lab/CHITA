@@ -1,5 +1,5 @@
 import string
-from utils.utils import *
+from utils.main_utils import *
 from pruners.CHITA import CHITA
 from pruners.multi_stage_pruner import MultiStagePruner
 import json

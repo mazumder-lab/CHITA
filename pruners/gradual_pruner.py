@@ -1,4 +1,4 @@
-from utils import *
+from utils.main_utils import *
 import time
 import torch.distributed as dist
 import gc

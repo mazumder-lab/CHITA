@@ -1,5 +1,5 @@
 import string
-from utils.utils import *
+from utils.main_utils import *
 from pruners.CHITA import CHITA
 from pruners.multi_stage_pruner import MultiStagePruner
 from pruners.gradual_pruner import GradualPruner
@@ -222,8 +222,7 @@ for seed,fisher_size, num_stages,num_iterations,first_order_term,sparsity,l2,spa
     'nprun_epochs':nprun_epochs,'prun_every':prun_every,
     'first_order_term':first_order_term,'seed':seed,'fisher_mini_bsz':fisher_mini_bsz,
     'fisher_subsample_size':fisher_subsample_size,
-    'num_iterations':num_iterations,'num_stages':num_stages,
-    'shuffle_train' : args.shuffle_train,'recompute_bn_stats' : recompute_bn_stats,
+    'num_iterations':num_iterations,'num_stages':num_stages,'recompute_bn_stats' : recompute_bn_stats,
     'ignore_bias':True,'base_level':base_level,
     'sparsity_schedule':sparsity_schedule,
     'block_size':block_size,'train_batch_size':args.train_batch_size,
