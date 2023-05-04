@@ -1,4 +1,4 @@
-from ..utils.utils import *
+from utils import *
 import time
 from utils.flops_utils import get_flops
 from contextlib import nullcontext

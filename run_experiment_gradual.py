@@ -86,7 +86,6 @@ else:
     args.gpu=0
 
 
-exec(open('/usr/share/modules/init/python.py').read())
 
 
 ##Change this to path of imagenet dset

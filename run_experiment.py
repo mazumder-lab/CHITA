@@ -51,7 +51,6 @@ pretrained = args.pretrained
 
 fisher_sizes = [(args.fisher_subsample_size[i], args.fisher_mini_bsz[i]) for i in range(len(args.fisher_mini_bsz)) ] ##Glue the sizes together so we don't take products
 
-exec(open('/usr/share/modules/init/python.py').read())
 
 
 ##Change this to path of imagenet dset

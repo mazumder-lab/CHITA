@@ -1,6 +1,6 @@
 import re
 import time
-from ..utils.utils import *
+from utils import *
 
 
 class MultiStagePruner:

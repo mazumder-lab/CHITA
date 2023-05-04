@@ -1,8 +1,7 @@
-from ..utils.utils import *
+from utils import *
 import time
 import torch.distributed as dist
 import gc
-import autograd_hacks.autograd_hacks as autograd_hacks
 
 
 class GradualPruner:
