@@ -58,6 +58,8 @@ parser.add_argument('--first_epoch', type=int, default=0)
 parser.add_argument('--schedule', type=str, default='cosine_lr_restarts')
 parser.add_argument('--pretrained', type=lambda x: (str(x).lower() == 'true'), default=True)
 
+parser.add_argument('--local_rank', default=-1, type=int, 
+                        help='local rank for distributed training')
 
 args = parser.parse_args()
 arch = args.arch
@@ -81,6 +83,9 @@ if args.distributed:
     if 'SLURM_PROCID' in os.environ: # for slurm scheduler
         args.rank = int(os.environ['SLURM_PROCID'])
         args.gpu = args.rank % torch.cuda.device_count()
+    elif args.local_rank != -1: # for torch.distributed.launch
+        args.rank = args.local_rank
+        args.gpu = args.local_rank
 else:
     args.rank = 0
     args.gpu=0
@@ -89,11 +94,15 @@ else:
 
 
 ##Change this to path of imagenet dset
-IMAGENET_PATH = os.environ['IMAGENET_PATH']
+if 'IMAGENET_PATH' in os.environ:  
+    IMAGENET_PATH = os.environ['IMAGENET_PATH']
+else:
+    print('****Warning**** No IMAGENET_PATH variable')
+    IMAGENET_PATH = ''
 CIFAR10_PATH = '../datasets'
 MNIST_PATH = '../datasets'
 
-dset_paths = {'imagenet':IMAGENET_PATH+'/raw','cifar10':CIFAR10_PATH,
+dset_paths = {'imagenet':IMAGENET_PATH,'cifar10':CIFAR10_PATH,
                 'mnist':MNIST_PATH}
 
 dset_path = dset_paths[dset]

@@ -54,7 +54,12 @@ fisher_sizes = [(args.fisher_subsample_size[i], args.fisher_mini_bsz[i]) for i i
 
 
 ##Change this to path of imagenet dset
-IMAGENET_PATH = os.environ['IMAGENET_PATH']
+##Change this to path of imagenet dset
+if 'IMAGENET_PATH' in os.environ:  
+    IMAGENET_PATH = os.environ['IMAGENET_PATH']
+else:
+    print('****Warning**** No IMAGENET_PATH variable')
+    IMAGENET_PATH = ''
 CIFAR10_PATH = '../datasets'
 MNIST_PATH = '../datasets'
 

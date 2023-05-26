@@ -65,8 +65,8 @@ def load_model(path, model):
 
 def imagenet_get_datasets(data_dir):
 
-    train_dir = os.path.join(data_dir, 'raw_train')
-    test_dir = os.path.join(data_dir, 'raw_val')
+    train_dir = os.path.join(data_dir, 'train')
+    test_dir = os.path.join(data_dir, 'val')
     normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                     std=[0.229, 0.224, 0.225])
 

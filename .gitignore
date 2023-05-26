@@ -8,3 +8,5 @@ __pycache__
 *.pyc
 *.nbc
 *.sbatch
+results/
+logs/

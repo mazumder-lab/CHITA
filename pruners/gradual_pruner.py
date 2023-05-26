@@ -2,6 +2,7 @@ from utils.main_utils import *
 import time
 import torch.distributed as dist
 import gc
+import copy
 
 
 class GradualPruner:
@@ -75,15 +76,16 @@ class GradualPruner:
                 else:
                     base_level = base_level_
                 self.model.eval()
-                autograd_hacks.enable_hooks()
                 w_pruned,mask=self.pruner.prune(self.mask,sparsities[epoch_index],base_level)
-                autograd_hacks.disable_hooks()
                 self.mask = mask.to(self.device)
                 del mask
                 del w_pruned
-                pruning_res = self.pruner.results
+                pruning_res = copy.deepcopy(self.pruner.results)
                 self.pruner.reset_pruner()
                 self.model.train()
+                if epoch == prunepochs[-1]:
+                    ##Done pruning - delete pruner
+                    self.pruner = None
             else:
                 pruning_res=[]
             
