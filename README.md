@@ -2,7 +2,7 @@
 
 This is the offical repo of the ICML 2023 paper **Fast as CHITA: Neural Network Pruning with Combinatorial Optimization**
 
-## Requirement
+## Requirements
 The code has been tested with the following versions of packages:
 ```
 python                    3.7
