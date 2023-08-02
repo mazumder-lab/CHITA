@@ -35,11 +35,12 @@ Scripts to run the algorithms are located in `scripts/`. The current code suppor
 ## Citing CHITA
 If you find CHITA useful in your research, please consider citing the following paper.
 ```
-@article{benbaki2023fast,
-  title={Fast as CHITA: Neural Network Pruning with Combinatorial Optimization},
-  author={Benbaki, Riade and Chen, Wenyu and Meng, Xiang and Hazimeh, Hussein and Ponomareva, Natalia and Zhao, Zhe and Mazumder, Rahul},
-  journal={arXiv preprint arXiv:2302.14623},
-  year={2023}
+@InProceedings{pmlr-v202-benbaki23a,
+  title = 	 {Fast as {CHITA}: Neural Network Pruning with Combinatorial Optimization},
+  author =       {Benbaki, Riade and Chen, Wenyu and Meng, Xiang and Hazimeh, Hussein and Ponomareva, Natalia and Zhao, Zhe and Mazumder, Rahul},
+  booktitle = 	 {Proceedings of the 40th International Conference on Machine Learning},
+  pages = 	 {2031--2049},
+  year = 	 {2023},
 }
 ```
 
